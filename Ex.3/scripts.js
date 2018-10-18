@@ -24,7 +24,7 @@ form.querySelector('input[type=submit]').addEventListener('click', function (e) 
 
     // Проходимся по input которые необходимо проверить
     for (var i = 0; i < 3; i++) {
-        if (elements[i].id === 'name' && (!elements[i].value.length || (elements[i].value.replace(/[a-zа-я]/ig, '').length))) {
+        if (elements[i].id === 'name' && (!elements[i].value.length || (elements[i].value.replace(/[a-zа-яё]/ig, '').length))) {
 
             error('Необходимо заполнить имя используя только буквы', i);
 
