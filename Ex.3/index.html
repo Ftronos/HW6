@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #feedback {
+            width: 250px;
+            margin: 0 auto;
+            padding: 15px;
+            -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+        }
+
+        #feedback input,
+        #feedback textarea {
+            width: 100%;
+            padding: 10px 15px;
+            box-sizing: border-box;
+            border: 2px solid #e9e9e9;
+        }
+
+        #feedback input:not(:last-of-type),
+        #feedback textarea {
+            margin-bottom: 15px;
+        }
+
+        #feedback input {
+            height: 35px;
+        }
+
+        #feedback .error {
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<form action="#" method="post" id="feedback">
+    <input type="text" id="name" name="name" placeholder="Ваше имя">
+    <input type="text" id="phone" name="phone" placeholder="Ваш телефон">
+    <input type="text" id="email" name="email" placeholder="Ваш email">
+    <textarea name="message" id="message" cols="30" rows="10" placeholder="Сообщение"></textarea>
+    <input type="submit" value="Отправить">
+</form>
+
+<script src="scripts.js"></script>
+</body>
+</html>
