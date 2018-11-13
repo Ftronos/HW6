@@ -14,48 +14,44 @@ form.querySelector('input[type=submit]').addEventListener('click', function (e) 
         elements[i].style.borderColor = '#e9e9e9';
     }
 
-    // Удаляем все сообщения с ошибками
-    var errArr = document.querySelectorAll('.error');
-    if (errArr.length !== 0) {
-        errArr.forEach(function (element) {
-            form.removeChild(element);
-        });
-    }
-
     // Проходимся по input которые необходимо проверить
     for (var i = 0; i < 3; i++) {
         if (elements[i].id === 'name' && (!elements[i].value.length || (elements[i].value.replace(/[a-zа-яё]/ig, '').length))) {
 
-            error('Необходимо заполнить имя используя только буквы', i);
+            $('#nameerr').dialog();
 
             e.preventDefault();
+
+            break;
 
         } else if (elements[i].id === 'phone' && (!elements[i].value.length || (elements[i].value.search(/\+7\(\d{3}\)\d{3}\-\d{4}/)))) {
 
-            error('Необходимо заполнить телефон в формате +7(000)000-0000', i);
+            $('#phoneerr').dialog();
 
             e.preventDefault();
+
+            break;
 
         } else if (elements[i].id === 'email' && (!elements[i].value.length || (elements[i].value.search(/\w+[\.\-]\w+@\w+\.\w+/)))) {
 
-            error('Необходимо заполнить email в следующих форматах: mymail@mail.ru, или my.mail@mail.ru, или my-mail@mail.ru', i);
+            $('#emailerr').dialog();
 
             e.preventDefault();
+
+            break;
         }
     }
 });
 
-function error(text, i) {
-    form.elements[i].style.borderColor = 'red';
-
-    var error = document.createElement('div');
-    error.classList.add('error');
-
-    error.innerHTML = text;
-
-    form.insertBefore(error, form.elements[i + 1]);
-}
-
 $(function() {
     $("#birthday").datepicker();
 });
+
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:false,
+    items:4,
+    autoplay: true,
+    autoplayTimeout: 1000
+})

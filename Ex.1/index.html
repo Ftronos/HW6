@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="owl.carousel.min.css">
+    <link rel="stylesheet" href="owl.theme.default.min.css">
     <style>
         #feedback {
             width: 250px;
@@ -32,24 +34,75 @@
         }
 
         #feedback .error {
-            margin-bottom: 15px;
-            font-size: 14px;
-            color: red;
+            display: none;
+        }
+
+        .products {
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .item {
+            border: 1px solid #e9e9e9;
+            padding: 10px;
+        }
+
+        .item .title {
+            font-weight: 600;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
+<div class="products">
+    <h1>Популярные товары</h1>
+    <div class="owl-carousel owl-theme">
+        <div class="item">
+            <p class="title">Товар 1</p>
+            <p class="description">Описание товара</p>
+            <span class="price">2545 руб.</span></div>
+        <div class="item">
+            <p class="title">Товар 2</p>
+            <p class="description">Описание товара</p>
+            <span class="price">1694 руб.</span></div>
+        <div class="item">
+            <p class="title">Товар 3</p>
+            <p class="description">Описание товара</p>
+            <span class="price">5698 руб.</span></div>
+        <div class="item">
+            <p class="title">Товар 4</p>
+            <p class="description">Описание товара</p>
+            <span class="price">2654 руб.</span></div>
+        <div class="item">
+            <p class="title">Товар 5</p>
+            <p class="description">Описание товара</p>
+            <span class="price">7831 руб.</span></div>
+        <div class="item">
+            <p class="title">Товар 6</p>
+            <p class="description">Описание товара</p>
+            <span class="price">4584 руб.</span></div>
+    </div>
+</div>
+
 <form action="#" method="post" id="feedback">
     <input type="text" id="name" name="name" placeholder="Ваше имя">
+    <p id="nameerr" class="error">Необходимо заполнить имя используя только буквы</p>
     <input type="text" id="phone" name="phone" placeholder="Ваш телефон">
+    <p id="phoneerr" class="error">Необходимо заполнить телефон в формате +7(000)000-0000</p>
     <input type="text" id="email" name="email" placeholder="Ваш email">
+    <p id="emailerr" class="error">Необходимо заполнить email в следующих форматах: mymail@mail.ru, или my.mail@mail.ru, или my-mail@mail.ru</p>
     <input type="text" id="birthday" name="birthday" placeholder="Дата рождения">
     <textarea name="message" id="message" cols="30" rows="10" placeholder="Сообщение"></textarea>
     <input type="submit" value="Отправить">
 </form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="owl.carousel.min.js"></script>
 <script src="scripts.js"></script>
 </body>
 </html>
