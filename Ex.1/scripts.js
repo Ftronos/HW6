@@ -55,3 +55,7 @@ function error(text, i) {
 
     form.insertBefore(error, form.elements[i + 1]);
 }
+
+$(function() {
+    $("#birthday").datepicker();
+});
